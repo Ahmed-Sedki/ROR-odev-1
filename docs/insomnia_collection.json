@@ -1,0 +1,594 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-10-21T20:30:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_rails_api",
+      "parentId": null,
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "name": "Rails API Collection",
+      "description": "Complete Rails API with 6 models",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_base",
+      "parentId": "wrk_rails_api",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:3000"
+      },
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_cookies",
+      "parentId": "wrk_rails_api",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "fld_health",
+      "parentId": "wrk_rails_api",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "name": "Health",
+      "description": "Health check endpoint",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_health_check",
+      "parentId": "fld_health",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/health",
+      "name": "Health Check",
+      "description": "Check if API is running",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "fld_users",
+      "parentId": "wrk_rails_api",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "name": "Users",
+      "description": "User management endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -2000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_users_list",
+      "parentId": "fld_users",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/users?page=1&per_page=10",
+      "name": "List Users",
+      "description": "Get paginated list of users",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -2100,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_users_get",
+      "parentId": "fld_users",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/users/11",
+      "name": "Get User",
+      "description": "Get a specific user by ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -2200,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_users_create",
+      "parentId": "fld_users",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/users",
+      "name": "Create User",
+      "description": "Create a new user",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"user\": {\n    \"name\": \"Test User\",\n    \"email\": \"test@example.com\"\n  }\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -2300,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_users_update",
+      "parentId": "fld_users",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/users/11",
+      "name": "Update User",
+      "description": "Update an existing user",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"user\": {\n    \"name\": \"Updated Name\"\n  }\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -2400,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_users_delete",
+      "parentId": "fld_users",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/users/11",
+      "name": "Delete User",
+      "description": "Delete a user",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -2500,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "fld_categories",
+      "parentId": "wrk_rails_api",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "name": "Categories",
+      "description": "Category management endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -3000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_categories_list",
+      "parentId": "fld_categories",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/categories?page=1&per_page=10",
+      "name": "List Categories",
+      "description": "Get paginated list of categories",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -3100,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_categories_get",
+      "parentId": "fld_categories",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/categories/14",
+      "name": "Get Category",
+      "description": "Get a specific category by ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -3200,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_categories_create",
+      "parentId": "fld_categories",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/categories",
+      "name": "Create Category",
+      "description": "Create a new category",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"category\": {\n    \"name\": \"Technology\",\n    \"description\": \"Tech-related posts\"\n  }\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -3300,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "fld_tags",
+      "parentId": "wrk_rails_api",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "name": "Tags",
+      "description": "Tag management endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -4000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_tags_list",
+      "parentId": "fld_tags",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/tags?page=1&per_page=10",
+      "name": "List Tags",
+      "description": "Get paginated list of tags",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -4100,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_tags_create",
+      "parentId": "fld_tags",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/tags",
+      "name": "Create Tag",
+      "description": "Create a new tag",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"tag\": {\n    \"name\": \"ruby\"\n  }\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -4200,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "fld_posts",
+      "parentId": "wrk_rails_api",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "name": "Posts",
+      "description": "Post management endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -5000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_posts_list",
+      "parentId": "fld_posts",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/posts?page=1&per_page=10",
+      "name": "List Posts",
+      "description": "Get paginated list of posts",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -5100,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_posts_get",
+      "parentId": "fld_posts",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/posts/51",
+      "name": "Get Post",
+      "description": "Get a specific post with embedded associations",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -5200,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_posts_filter_user",
+      "parentId": "fld_posts",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/posts?user_id=11",
+      "name": "Filter Posts by User",
+      "description": "Get posts filtered by user ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -5300,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_posts_filter_category",
+      "parentId": "fld_posts",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/posts?category_id=14",
+      "name": "Filter Posts by Category",
+      "description": "Get posts filtered by category ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -5400,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_posts_filter_tag",
+      "parentId": "fld_posts",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/posts?tag=slam",
+      "name": "Filter Posts by Tag",
+      "description": "Get posts filtered by tag name",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -5500,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_posts_create",
+      "parentId": "fld_posts",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/posts",
+      "name": "Create Post",
+      "description": "Create a new post",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"post\": {\n    \"title\": \"New Post Title\",\n    \"body\": \"Post content here...\",\n    \"user_id\": 11,\n    \"category_id\": 14\n  }\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -5600,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_posts_tags",
+      "parentId": "fld_posts",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/posts/51/tags",
+      "name": "Get Post Tags",
+      "description": "Get all tags for a specific post",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -5700,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "fld_comments",
+      "parentId": "wrk_rails_api",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "name": "Comments",
+      "description": "Comment management endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -6000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_comments_list",
+      "parentId": "fld_comments",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/posts/51/comments?page=1&per_page=10",
+      "name": "List Comments for Post",
+      "description": "Get paginated comments for a specific post",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -6100,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_comments_create",
+      "parentId": "fld_comments",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/posts/51/comments",
+      "name": "Create Comment",
+      "description": "Create a new comment on a post",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"comment\": {\n    \"body\": \"Great post!\",\n    \"user_id\": 12\n  }\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -6200,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_comments_update",
+      "parentId": "fld_comments",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/comments/101",
+      "name": "Update Comment",
+      "description": "Update an existing comment",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"comment\": {\n    \"body\": \"Updated comment text\"\n  }\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -6300,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_comments_delete",
+      "parentId": "fld_comments",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/comments/101",
+      "name": "Delete Comment",
+      "description": "Delete a comment",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -6400,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "fld_post_tags",
+      "parentId": "wrk_rails_api",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "name": "Post Tags",
+      "description": "Post-Tag association endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -7000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_post_tags_create",
+      "parentId": "fld_post_tags",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/post_tags",
+      "name": "Create Post-Tag Association",
+      "description": "Associate a tag with a post",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"post_tag\": {\n    \"post_id\": 51,\n    \"tag_id\": 16\n  }\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -7100,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_post_tags_delete",
+      "parentId": "fld_post_tags",
+      "modified": 1729540200000,
+      "created": 1729540200000,
+      "url": "{{ _.base_url }}/post_tags/115",
+      "name": "Delete Post-Tag Association",
+      "description": "Remove a tag from a post",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -7200,
+      "isPrivate": false,
+      "_type": "request"
+    }
+  ]
+}
