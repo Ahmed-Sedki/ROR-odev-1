@@ -173,8 +173,8 @@ DELETE /post_tags/:id      # Remove tag from post
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/rails-api-backend.git
-cd rails-api-backend
+git clone https://github.com/Ahmed-Sedki/ROR-odev-1.git
+cd ROR-odev-1
 ```
 
 2. **Install dependencies**
